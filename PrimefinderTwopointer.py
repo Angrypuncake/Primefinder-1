@@ -1,4 +1,3 @@
-
 def prime_finder(n):
 #This is an overly complicated method of finding prime numbers by using double pointers in a list and nested while loops.
 
@@ -25,13 +24,14 @@ def prime_finder(n):
         primes.remove(primes[right_pointer])
         left_pointer = 0
         removal_count += 1
-        print("New list {0}: iteration: {1}, new length: {2}".format(primes, removal_count, len(primes) - 1 ))
+        print("Removal count: {0}, new length: {1}".format(removal_count, len(primes) - 1 ))
         if right_pointer > len(primes) - 1:
           break
         continue
 #increment leftpointer by one to shift it to the right to check the same element with a different number.
       left_pointer += 1
 #The if statement below is to handle out of list index errors because everytime you remove an element, the list shortens by 1. For the final case, you would have the right_pointer < len(list) which generates an index error.
+    print("{0} is prime".format(primes[right_pointer]))
     if right_pointer > len(primes) - 1:
       break
 #When left pointer reaches right pointer, the current element is not divisible by any numbers before it and therefore can stay in the list, breaking the inner while loop. Increment right pointer by one to view next element. 
@@ -43,5 +43,6 @@ def prime_finder(n):
 
 
 
-print(prime_finder(300))
+print(prime_finder(30))
 #testing with n = 300
+
